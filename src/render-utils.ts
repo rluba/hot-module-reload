@@ -13,7 +13,7 @@ export function recreateView(viewFactory: ViewFactoryWithTemplate, oldViewContai
   const newContainer = parentContainer.createChild();
   newContainer._resolvers = oldViewContainer._resolvers;
   // const newContainer = oldViewContainer;
-  
+
   const newView = viewFactory.create(newContainer, factoryCreateInstruction) as ViewCorrect;
   newView._isUserControlled = true;
   return newView as ViewCorrect;
@@ -104,7 +104,7 @@ export function rerenderMatchingSlotChildren(slot: ViewSlotCorrect, newViewFacto
     const bindingContext = bindingContexts.get(oldView);
     const overrideContext = overrideContexts.get(oldView);
     const controller = controllers.get(oldView);
-    
+
     const view = recreateView(newViewFactory || oldView.viewFactory, oldView.container);
 
     // setup _replacementView in case the same view is looped over again

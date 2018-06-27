@@ -1,6 +1,4 @@
 import { Loader } from 'aurelia-loader';
-import { ViewEngine } from 'aurelia-templating';
-import { Container } from 'aurelia-dependency-injection';
 import { ResourceModuleCorrect, AU } from './_typings';
 import { TraversalInfo } from './view-model-traverse-controller';
 export declare function getAuElements(): (Element & AU)[];
@@ -10,10 +8,7 @@ export declare class HmrContext {
         moduleRegistry: Object;
         templateRegistry: Object;
     };
-    viewEngine: ViewEngine & {
-        moduleAnalyzer: any;
-        container: Container;
-    };
+    viewEngine: any;
     moduleAnalyzerCache: {
         [moduleId: string]: ResourceModuleCorrect;
     };
